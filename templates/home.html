@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("{% static 'img/med1.jpg' %}");
+
+  min-height: 580px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 350px;
+    max-height: 520px;
+  padding: 14px;
+  background-color: white;
+    opacity: 70%;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+    .msg{
+        font-size: 18px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div style="margin-top:210px;padding:15px 15px 2500px;font-size:30px">
+<div class="bg-img">
+  <form action="login1" class="container" method="post">{% csrf_token %}
+    <h1>Login</h1>
+
+    <label for="userid"><b>Userid</b></label>
+    <input type="text" placeholder="Enter Userid" name="t1" id="t1" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="t2" id="t2" required>
+
+    <button type="submit" class="btn">Login</button><br>
+     <div class="msg">{{ msg }}</div>
+      <br>
+      <div class="msg">New user?<a href="guestreg">signup</a></div>
+  </form>
+</div>
+</div>
+</body>
+</html>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ngoregistration</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'regtemp/fonts/material-icon/css/material-design-iconic-font.css' %}">
+    <link rel="stylesheet" href="{% static 'regtemp/vendor/nouislider/nouislider.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'regtemp/css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+        <h1 style="color: white; font-style: normal; text-align: center; font-size: 50px"> NGO REGISTRATION </h1>
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{% static 'img/ngo.jpg' %}" alt="">
+                    <div class="signup-img-content">
+                        <h2>Register now </h2>
+                        <p>while seats are available !</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" action="ngoreg1">{ % csrf_token % }
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="ngobuildingno" class="required">NGO Building No</label>
+                                    <input type="text" name="t1" id="t1" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="location" class="required">Location</label>
+                                    <input type="text" name="t2" id="t2" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="authorityname" class="required">Authority Name</label>
+                                    <input type="text" name="t3" id="t3" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="authorityphone" class="required">Authority Phone</label>
+                                    <input type="text" name="t4" id="t4" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="officephonenumber" class="required">Office Phone</label>
+                                    <input type="text" name="t5" id="t5" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="district" class="required">District</label>
+                                    <input type="text" name="t6" id="t6" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="pin" class="required">Pin</label>
+                                    <input type="text" name="t7" id="t7" />
+                                </div>
+
+
+
+                            </div>
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="password" class="required">Password</label>
+                                    <input type="password" name="t8" id="t8" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Re-typepassword" class="required">Re-type Password</label>
+                                    <input type="password" name="t9" id="t9" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Licenseproof" class="required">License Proof</label>
+                                    <input type="file" name="file"/>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'regtemp/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'regtemp/vendor/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'regtemp/vendor/wnumb/wNumb.js' %}"></script>
+    <script src="{% static 'regtemp/vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'regtemp/vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+    <script src="{% static 'regtemp/js/main.js' %}"></script>
+</body>
+</html>
+
+{% endblock %}
